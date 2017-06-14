@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>  
+    <package name="example" namespace="" extends="struts-default">  
+        <action name="UpLoad" class="opencv.Main" method="myExecute">  
+	        <result name="success">/result.jsp</result> 
+        </action>  
+        <action name="Main" class="opencv.Main" method="myExecute">  
+            <result name="success" type="stream">
+            	<param name="contentType">image/jpeg</param>
+                <param name="inputName">inputStream</param>
+            </result>   
+        </action>  
+        <action name="java_ocr" class="opencv.OCR" method="myExecute">  
+	        <result name="success">/java_ocr.jsp</result> 
+        </action>  
+        <action name="QRCode_Decode" class="decoder.QRCodeDecoderHandler" method="myExecute">  
+	        <result name="success">/QRCodeDecode.jsp</result> 
+        </action>  
+    </package>      
+</struts>  
